@@ -13,5 +13,14 @@ namespace Snake
             Console.WriteLine("test");
             Console.ReadLine();
         }
+        static void Drow(int x, int y , char sym)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(sym);
+        }
+
     }
+
+
+
 }
