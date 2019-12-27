@@ -10,8 +10,15 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+
+            Horizont topLine = new Horizont(0, Console.WindowWidth, 0, '#');
+            Horizont botLine = new Horizont(0, Console.WindowWidth, Console.WindowHeight - 1, '#');
+            Vertical leftLine = new Vertical(0, Console.WindowHeight - 1, 0, '#');
+            Vertical rightLine = new Vertical(0, Console.WindowHeight - 1, Console.WindowWidth - 1, '#');
+            rightLine.DrawLine();
+            topLine.DrawLine();
+            botLine.DrawLine();
+            leftLine.DrawLine();
 
             Console.ReadLine();
         }
