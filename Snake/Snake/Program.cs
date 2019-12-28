@@ -11,19 +11,24 @@ namespace Snake
         static void Main(string[] args)
         {
 
-            Horizont topLine = new Horizont(0, Console.WindowWidth, 0, '#');
-            Horizont botLine = new Horizont(0, Console.WindowWidth, Console.WindowHeight - 1, '#');
-            Vertical leftLine = new Vertical(0, Console.WindowHeight - 1, 0, '#');
-            Vertical rightLine = new Vertical(0, Console.WindowHeight - 1, Console.WindowWidth - 1, '#');
+            Console.SetBufferSize(120, 30 );
+
+            Horizont topLine = new Horizont(0, 78, 0, '#');
+            Horizont botLine = new Horizont(0, 78, 24, '#');
+            Vertical leftLine = new Vertical(0, 24, 0, '#');
+            Vertical rightLine = new Vertical(0, 24, 78, '#');
             rightLine.DrawLine();
             topLine.DrawLine();
             botLine.DrawLine();
             leftLine.DrawLine();
 
+            Point p = new Point(4, 5, '^');
+            p.Draw();
+
             Console.ReadLine();
         }
 
-    }
+    } 
 
 
 
