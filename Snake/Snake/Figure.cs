@@ -9,7 +9,7 @@ namespace Snake
     class Figure
     {
         protected List<Point> pointList = new List<Point>();
-        public void DrawLine()
+        public void Draw()
         {
             foreach (var item in pointList)
             {
