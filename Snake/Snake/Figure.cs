@@ -13,7 +13,7 @@ namespace Snake
         {
             foreach (var item in pointList)
             {
-                item.Draw();
+                item.DrawPoint();
             }
         }
     }

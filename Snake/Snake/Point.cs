@@ -44,7 +44,14 @@ namespace Snake
                 y = y - offset;
             }
         }
-        public void Draw()
+
+        internal void Clean()
+        {
+            sym = ' ';
+            DrawPoint();
+        }
+
+        public void DrawPoint()
         {
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);

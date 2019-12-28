@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake
@@ -10,9 +11,11 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+
             Console.SetWindowSize(1, 1);
             Console.SetBufferSize(80, 26);
             Console.SetWindowSize(80, 26);
+            Console.CursorVisible = false;
 
             Horizont topLine = new Horizont(0, 78, 0, '#');
             Horizont botLine = new Horizont(0, 78, 24, '#');
@@ -27,6 +30,19 @@ namespace Snake
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300); snake.Move();
+            Thread.Sleep(300);
             Console.ReadLine();
         }
 
