@@ -26,24 +26,23 @@ namespace Snake
             botLine.Draw();
             leftLine.Draw();
 
-            Point p = new Point(4, 5, '^');
+            Point p = new Point(4, 5, '@');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300);
-            Console.ReadLine();
+
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo getKey = Console.ReadKey(true);
+                    snake.Hanle(getKey.Key);
+                }
+                snake.Move();
+                Thread.Sleep(100);
+            }
+
+
         }
 
     } 
