@@ -17,14 +17,9 @@ namespace Snake
             Console.SetWindowSize(80, 26);
             Console.CursorVisible = false;
 
-            Horizont topLine = new Horizont(0, 78, 0, '#');
-            Horizont botLine = new Horizont(0, 78, 24, '#');
-            Vertical leftLine = new Vertical(0, 24, 0, '#');
-            Vertical rightLine = new Vertical(0, 24, 78, '#');
-            rightLine.Draw();
-            topLine.Draw();
-            botLine.Draw();
-            leftLine.Draw();
+            Walls walls = new Walls(78, 24);
+            walls.Draw();
+            
 
             Point p = new Point(4, 5, '@');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
@@ -37,12 +32,15 @@ namespace Snake
 
             while (true)
             {
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
                 if (snake.Eat(genFood))
                 {
                     snake.Draw();
                     genFood = food.Gen();
                     genFood.DrawPoint();
-                    //snake.Draw();
 
                 }
                 else snake.Move();
